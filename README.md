@@ -485,6 +485,7 @@ sentinelsoc/
 ```
 ---
 
+
 ##  API Documentation
 
 ### Base URL
@@ -741,12 +742,12 @@ Contributions are welcome! This project is perfect for students learning cyberse
 
 ## ‍ Author
 
-****
+**RAGHUVAMSY**
 -  B.Tech Cybersecurity (5th Semester)
 -  Your University Name
 -  your.email@example.com
 -  [LinkedIn](https://linkedin.com/in/yourprofile)
--  [GitHub](https://github.com/yourusername)
+-  [GitHub](https://github.com/RAGHUVAMSY)
 
 ---
 
@@ -775,7 +776,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 MIT License
 
-Copyright (c) 2024 
+Copyright (c) 2024 RAGHUVAMSY
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -865,7 +866,7 @@ This project is designed as a **B.Tech Minor Project** demonstrating:
 ---
 
 <div align="center">
-  <sub>Built with ️ by  | &copy; 2024 SentinelSOC</sub>
+  <sub>Built with ️ by RAGHUVAMSY | &copy; 2024 SentinelSOC</sub>
 </div>
 
 
