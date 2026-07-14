@@ -402,7 +402,7 @@ docker-compose exec backend python init_db.py
 
 ## ️ Architecture
 
-
+'''
 ┌─────────────────────────────────────────────────────────────┐
 │                        CLIENT (Browser)                      │
 │  React 18 + Vite + TailwindCSS + Chart.js + React Router    │
@@ -437,7 +437,7 @@ docker-compose exec backend python init_db.py
 │  │   IOC    │ │  Rules   │ │ Reports  │ │ Audit Logs   │  │
 │  └──────────┘ └──────────┘ └──────────┘ └──────────────┘  │
 └─────────────────────────────────────────────────────────────┘
-
+'''
 
 ###  Project Structure
 
