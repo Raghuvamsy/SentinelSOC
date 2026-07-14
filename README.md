@@ -1,8 +1,8 @@
-# ️ sentinel-soc - AI-Powered Security Operations Center
+# ️ ️ SentinelSOC - AI-Powered Security Operations Center
 
 <div align="center">
 
-![sentinel-soc Banner](https://img.shields.io/badge/sentinel-soc-v1.0.0-blue?style=for-the-badge)
+![️ SentinelSOC Banner](https://img.shields.io/badge/️ SentinelSOC-v1.0.0-blue?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-green.svg?style=for-the-badge&logo=python)](https://www.python.org)
 [![React 18](https://img.shields.io/badge/React-18.2-61DAFB.svg?style=for-the-badge&logo=react)](https://reactjs.org)
@@ -25,9 +25,9 @@
 
 ##  Overview
 
-**sentinel-soc** is a comprehensive, full-stack Security Operations Center (SOC) platform designed as a **B.Tech Cybersecurity Minor Project**. It simulates real-world SOC operations by integrating log ingestion, automated threat detection, alert management, incident response, IOC investigation, and report generation — all within a modern, dark-themed dashboard.
+**️ SentinelSOC** is a comprehensive, full-stack Security Operations Center (SOC) platform designed as a **B.Tech Cybersecurity Minor Project**. It simulates real-world SOC operations by integrating log ingestion, automated threat detection, alert management, incident response, IOC investigation, and report generation — all within a modern, dark-themed dashboard.
 
-Inspired by enterprise tools like **Microsoft Sentinel**, **Splunk ES**, **IBM QRadar**, and **Wazuh**, sentinel-soc provides hands-on experience with the workflows and technologies used in professional security operations.
+Inspired by enterprise tools like **Microsoft Sentinel**, **Splunk ES**, **IBM QRadar**, and **Wazuh**, ️ SentinelSOC provides hands-on experience with the workflows and technologies used in professional security operations.
 
 ###  Educational Objectives
 
@@ -137,8 +137,8 @@ Inspired by enterprise tools like **Microsoft Sentinel**, **Splunk ES**, **IBM Q
 ##  Demo
 
 ### Live Demo
->  **Frontend**: [https://sentinel-soc.vercel.app](https://sentinel-soc.vercel.app)  
->  **API**: [https://sentinel-soc-api.onrender.com](https://sentinel-soc-api.onrender.com)
+>  **Frontend**: [https://️ SentinelSOC.vercel.app](https://️ SentinelSOC.vercel.app)  
+>  **API**: [https://️ SentinelSOC-api.onrender.com](https://️ SentinelSOC-api.onrender.com)
 
 ### Demo Credentials
 
@@ -176,8 +176,8 @@ Inspired by enterprise tools like **Microsoft Sentinel**, **Splunk ES**, **IBM Q
 #### 1. Clone the Repository
 
 bash
-git clone https://github.com/raghuvamsy/sentinel-soc.git
-cd sentinel-soc
+git clone https://github.com/raghuvamsy/️ SentinelSOC.git
+cd ️ SentinelSOC
 
 
 #### 2. MongoDB Setup
@@ -193,7 +193,7 @@ cd sentinel-soc
 
 Your connection string will look like:
 
-mongodb+srv://admin:<password>@cluster0.xxxxx.mongodb.net/sentinel-soc?retryWrites=true&w=majority
+mongodb+srv://admin:<password>@cluster0.xxxxx.mongodb.net/️ SentinelSOC?retryWrites=true&w=majority
 
 
 **Option B: Local MongoDB Installation**
@@ -251,10 +251,10 @@ Edit `.env` file with your configuration:
 
 env
 # MongoDB Configuration
-MONGO_URI=mongodb+srv://admin:yourpassword@cluster0.xxxxx.mongodb.net/sentinel-soc?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://admin:yourpassword@cluster0.xxxxx.mongodb.net/️ SentinelSOC?retryWrites=true&w=majority
 
 # For local MongoDB, use:
-# MONGO_URI=mongodb://localhost:27017/sentinel-soc
+# MONGO_URI=mongodb://localhost:27017/️ SentinelSOC
 
 # Security Keys (change these!)
 JWT_SECRET_KEY=your-super-secret-jwt-key-change-in-production
@@ -273,7 +273,7 @@ python init_db.py
 
 Expected output:
 
- Initializing sentinel-soc Database...
+ Initializing ️ SentinelSOC Database...
  Connecting to MongoDB...
  Connected to MongoDB successfully!
 
@@ -437,7 +437,7 @@ docker-compose exec backend python init_db.py
 ## Project Structure
 
 ```text
-sentinel-soc/
+️ SentinelSOC/
 ├── backend/
 │   ├── routes/
 │   │   ├── auth.py
@@ -491,7 +491,7 @@ sentinel-soc/
 ### Base URL
 
 Development: http://localhost:5000/api
-Production: https://sentinel-soc-api.onrender.com/api
+Production: https://️ SentinelSOC-api.onrender.com/api
 
 
 ### Authentication Endpoints
@@ -572,7 +572,7 @@ curl -X POST http://localhost:5000/api/auth/login \
   "user": {
     "id": "507f1f77bcf86cd799439011",
     "username": "admin",
-    "email": "admin@sentinel-soc.com",
+    "email": "admin@️ SentinelSOC.com",
     "role": "admin"
   }
 }
@@ -628,7 +628,7 @@ npm test
 
 ### Frontend Deployment (Vercel)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RAGHUVAMSY/sentinel-soc)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RAGHUVAMSY/️ SentinelSOC)
 
 1. Push code to GitHub
 2. Import project in [Vercel](https://vercel.com)
@@ -637,7 +637,7 @@ npm test
 
 ### Backend Deployment (Render)
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/RAGHUVAMSY/sentinel-soc)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/RAGHUVAMSY/️ SentinelSOC)
 
 1. Push code to GitHub
 2. Create new Web Service on [Render](https://render.com)
@@ -801,19 +801,19 @@ SOFTWARE.
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=RAGHUVAMSY/sentinel-soc&type=Date)](https://star-history.com/#RAGHUVAMSY/sentinel-soc&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=RAGHUVAMSY/️ SentinelSOC&type=Date)](https://star-history.com/#RAGHUVAMSY/️ SentinelSOC&Date)
 
 ---
 
 ##  Project Statistics
 
-![GitHub stars](https://img.shields.io/github/stars/RAGHUVAMSY/sentinel-soc?style=social)
-![GitHub forks](https://img.shields.io/github/forks/RAGHUVAMSY/sentinel-soc?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/RAGHUVAMSY/sentinel-soc?style=social)
-![GitHub repo size](https://img.shields.io/github/repo-size/RAGHUVAMSY/sentinel-soc)
-![GitHub language count](https://img.shields.io/github/languages/count/RAGHUVAMSY/sentinel-soc)
-![GitHub top language](https://img.shields.io/github/languages/top/RAGHUVAMSY/sentinel-soc)
-![GitHub last commit](https://img.shields.io/github/last-commit/RAGHUVAMSY/sentinel-soc?color=red)
+![GitHub stars](https://img.shields.io/github/stars/RAGHUVAMSY/️ SentinelSOC?style=social)
+![GitHub forks](https://img.shields.io/github/forks/RAGHUVAMSY/️ SentinelSOC?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/RAGHUVAMSY/️ SentinelSOC?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/RAGHUVAMSY/️ SentinelSOC)
+![GitHub language count](https://img.shields.io/github/languages/count/RAGHUVAMSY/️ SentinelSOC)
+![GitHub top language](https://img.shields.io/github/languages/top/RAGHUVAMSY/️ SentinelSOC)
+![GitHub last commit](https://img.shields.io/github/last-commit/RAGHUVAMSY/️ SentinelSOC?color=red)
 
 ---
 
@@ -823,7 +823,7 @@ SOFTWARE.
 
 **If you found this project helpful, please give it a ⭐**
 
-[![Star on GitHub](https://img.shields.io/github/stars/RAGHUVAMSY/sentinel-soc.svg?style=social)](https://github.com/RAGHUVAMSY/sentinel-soc)
+[![Star on GitHub](https://img.shields.io/github/stars/RAGHUVAMSY/️ SentinelSOC.svg?style=social)](https://github.com/RAGHUVAMSY/️ SentinelSOC)
 
 </div>
 
@@ -836,7 +836,7 @@ For support, questions, or collaboration:
 -  **Email**: your.email@example.com
 -  **Discord**: YourDiscordServer
 -  **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
--  **Documentation**: [Wiki](https://github.com/RAGHUVAMSY/sentinel-soc/wiki)
+-  **Documentation**: [Wiki](https://github.com/RAGHUVAMSY/️ SentinelSOC/wiki)
 
 ---
 
@@ -866,7 +866,7 @@ This project is designed as a **B.Tech Minor Project** demonstrating:
 ---
 
 <div align="center">
-  <sub>Built with ️ by RAGHUVAMSY | &copy; 2024 sentinel-soc</sub>
+  <sub>Built with ️ by RAGHUVAMSY | &copy; 2024 ️ SentinelSOC</sub>
 </div>
 
 
