@@ -400,116 +400,89 @@ docker-compose exec backend python init_db.py
 
 ---
 
-## ️ Architecture
+## Architecture
 
-'''
+```text
 ┌─────────────────────────────────────────────────────────────┐
-│                        CLIENT (Browser)                      │
+│                        CLIENT (Browser)                     │
 │  React 18 + Vite + TailwindCSS + Chart.js + React Router    │
 └─────────────────────────┬───────────────────────────────────┘
                           │ HTTPS/REST
                           ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                      API GATEWAY (Flask)                     │
-│  ┌─────────────┐  ┌──────────────┐  ┌───────────────────┐  │
-│  │ Auth Routes │  │ Alert Routes │  │ Incident Routes   │  │
-│  └─────────────┘  └──────────────┘  └───────────────────┘  │
-│  ┌─────────────┐  ┌──────────────┐  ┌───────────────────┐  │
-│  │ Log Routes  │  │  IOC Routes  │  │  Report Routes    │  │
-│  └─────────────┘  └──────────────┘  └───────────────────┘  │
+│                    API GATEWAY (Flask)                      │
+│  ┌─────────────┐  ┌──────────────┐  ┌───────────────────┐   │
+│  │ Auth Routes │  │ Alert Routes │  │ Incident Routes   │   │
+│  └─────────────┘  └──────────────┘  └───────────────────┘   │
+│  ┌─────────────┐  ┌──────────────┐  ┌───────────────────┐   │
+│  │ Log Routes  │  │ IOC Routes   │  │ Report Routes     │   │
+│  └─────────────┘  └──────────────┘  └───────────────────┘   │
 └─────────────────────────┬───────────────────────────────────┘
                           │
         ┌─────────────────┼─────────────────┐
-        ▼                 ▼                  ▼
+        ▼                 ▼                 ▼
 ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│   Auth       │  │  Detection   │  │   Report     │
-│   Service    │  │   Engine     │  │  Generator   │
+│ Auth Service │  │ Detection    │  │ Report       │
+│              │  │ Engine       │  │ Generator    │
 └──────────────┘  └──────────────┘  └──────────────┘
-        │                 │                  │
-        └─────────────────┼──────────────────┘
+        │                 │                 │
+        └─────────────────┼─────────────────┘
                           ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   DATA LAYER (MongoDB)                       │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────┐  │
-│  │  Users   │ │  Alerts  │ │Incidents │ │    Logs      │  │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────────┘  │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────┐  │
-│  │   IOC    │ │  Rules   │ │ Reports  │ │ Audit Logs   │  │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────────┘  │
+│                     DATA LAYER (MongoDB)                    │
+│  Users │ Alerts │ Incidents │ Logs │ IOC │ Rules │ Reports │
 └─────────────────────────────────────────────────────────────┘
-'''
+```
 
-###  Project Structure
+## Project Structure
 
-
+```text
 sentinelsoc/
-├── backend/                      # Python Flask API
-│   ├── routes/                   # API endpoints
-│   │   ├── auth.py              # Authentication routes
-│   │   ├── alerts.py            # Alert management
-│   │   ├── incidents.py         # Incident management
-│   │   ├── logs.py              # Log ingestion
-│   │   ├── dashboard.py         # Dashboard statistics
-│   │   ├── ioc.py               # IOC lookup
-│   │   ├── reports.py           # PDF generation
-│   │   └── rules.py             # Rule management
-│   ├── models/                   # Database models
-│   │   ├── user.py              # User model
-│   │   ├── alert.py             # Alert model
-│   │   └── log.py               # Log model
-│   ├── detection_engine/         # Threat detection
-│   │   ├── engine.py            # Main detection engine
-│   │   └── rules.py             # Detection rules
-│   ├── middlewares/              # Custom middleware
-│   │   ├── auth_middleware.py   # JWT & role checking
-│   │   ├── security.py          # Security headers
-│   │   └── rate_limiter.py      # API rate limiting
-│   ├── utils/                    # Helper functions
-│   ├── sample_logs/              # Test log files
-│   │   ├── windows_security.json
-│   │   ├── linux_auth.txt
-│   │   ├── apache_access.log
-│   │   └── firewall_logs.csv
-│   ├── app.py                    # Application factory
-│   ├── config.py                 # Configuration
-│   ├── init_db.py                # Database seeder
-│   └── requirements.txt          # Python dependencies
-├── frontend/                     # React application
+├── backend/
+│   ├── routes/
+│   │   ├── auth.py
+│   │   ├── alerts.py
+│   │   ├── incidents.py
+│   │   ├── logs.py
+│   │   ├── dashboard.py
+│   │   ├── ioc.py
+│   │   ├── reports.py
+│   │   └── rules.py
+│   ├── models/
+│   │   ├── user.py
+│   │   ├── alert.py
+│   │   └── log.py
+│   ├── detection_engine/
+│   │   ├── engine.py
+│   │   └── rules.py
+│   ├── middlewares/
+│   │   ├── auth_middleware.py
+│   │   ├── security.py
+│   │   └── rate_limiter.py
+│   ├── utils/
+│   ├── sample_logs/
+│   ├── app.py
+│   ├── config.py
+│   ├── init_db.py
+│   └── requirements.txt
+├── frontend/
 │   ├── src/
-│   │   ├── components/           # Reusable components
-│   │   │   ├── common/           # Shared components
-│   │   │   ├── dashboard/        # Dashboard widgets
-│   │   │   ├── alerts/           # Alert components
-│   │   │   ├── incidents/        # Incident components
-│   │   │   └── logs/             # Log components
-│   │   ├── pages/                # Page components
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Alerts.jsx
-│   │   │   ├── Incidents.jsx
-│   │   │   ├── LogIngestion.jsx
-│   │   │   ├── IOCLookup.jsx
-│   │   │   ├── Reports.jsx
-│   │   │   ├── Rules.jsx
-│   │   │   └── Login.jsx
-│   │   ├── layouts/              # Layout components
-│   │   │   └── DashboardLayout.jsx
-│   │   ├── hooks/                # Custom React hooks
-│   │   │   └── useAuth.jsx
-│   │   ├── services/             # API services
-│   │   │   └── api.js
-│   │   ├── App.jsx               # Main app component
-│   │   ├── main.jsx              # Entry point
-│   │   └── index.css             # Global styles
-│   ├── index.html
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
 │   ├── package.json
 │   ├── vite.config.js
 │   └── tailwind.config.js
-├── docker-compose.yml            # Docker configuration
+├── docker-compose.yml
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
-
+```
 ---
 
 ##  API Documentation
@@ -768,7 +741,7 @@ Contributions are welcome! This project is perfect for students learning cyberse
 
 ## ‍ Author
 
-**Your Name**
+****
 -  B.Tech Cybersecurity (5th Semester)
 -  Your University Name
 -  your.email@example.com
@@ -802,7 +775,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 MIT License
 
-Copyright (c) 2024 Your Name
+Copyright (c) 2024 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -892,7 +865,7 @@ This project is designed as a **B.Tech Minor Project** demonstrating:
 ---
 
 <div align="center">
-  <sub>Built with ️ by Your Name | &copy; 2024 SentinelSOC</sub>
+  <sub>Built with ️ by  | &copy; 2024 SentinelSOC</sub>
 </div>
 
 
